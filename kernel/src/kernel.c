@@ -1,18 +1,8 @@
-volatile char* video_memory = (volatile char*) 0xB8000;
-
+#include "terminal/terminal.h"
 
 
 
 void KiEntry() {
-    int i = 0;
-    while(1){
-        i++;
-        video_memory[i] = 'Q';
-        i++;
-        video_memory[i] = 0x09;
-        i++;
-        video_memory[i] = '\n';
-        i++;
-        video_memory[i] = 0x10;
-    }
+    KiTerminalClearScreen();
+    KiTerminalPuts("Hello World!\nWelcome to my Little OS that idk what ill do without =(");
 }

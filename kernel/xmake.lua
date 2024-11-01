@@ -6,7 +6,8 @@ target("kernel")
     set_kind("binary")                    
     set_arch("i386")    
                    
-    add_files("src/kernel.c", "src/boot.S")
+    add_files("src/*.c", "src/*.S")
+    add_files("src/**/*.c", "src/**/*.S")
 
     set_filename("os.bin")
     set_targetdir(".")

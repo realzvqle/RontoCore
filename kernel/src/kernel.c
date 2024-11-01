@@ -1,8 +1,18 @@
 volatile char* video_memory = (volatile char*) 0xB8000;
 
-void kernel_main() {
-    video_memory[0] = 'Q';
-    video_memory[1] = 0x07;
-    video_memory[2] = 'i';
-    video_memory[3] = 0x07;
+
+
+
+void KiEntry() {
+    int i = 0;
+    while(1){
+        i++;
+        video_memory[i] = 'Q';
+        i++;
+        video_memory[i] = 0x09;
+        i++;
+        video_memory[i] = '\n';
+        i++;
+        video_memory[i] = 0x10;
+    }
 }

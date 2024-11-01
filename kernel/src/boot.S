@@ -5,9 +5,9 @@
 .long -(0x1BADB002)   
 
 .section .text
-.global _start
-_start:
+.global _KiLoader
+_KiLoader:
     cli                
-    mov $kernel_main, %eax
+    mov $KiEntry, %eax
     call *%eax        
     hlt               

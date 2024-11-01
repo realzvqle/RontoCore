@@ -6,8 +6,9 @@
 
 .section .text
 .global _KiLoader
-_KiLoader:
-    cli                
+
+_KiLoader:  
+    cli          
     mov $KiEntry, %eax
     call *%eax        
     hlt               

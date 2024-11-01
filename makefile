@@ -4,7 +4,7 @@ all:
 	cp kernel/os.bin isodir/boot/os.bin
 	cp grub.cfg isodir/boot/grub/grub.cfg
 	grub-mkrescue -o os.iso isodir
-	qemu-system-i386 -cdrom os.iso -display gtk
+	qemu-system-i386 -m 512M -cdrom os.iso -display gtk
 
 
 clean:

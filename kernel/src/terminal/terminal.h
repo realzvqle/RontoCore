@@ -10,5 +10,5 @@
 void KiTerminalPuts(const char* str);
 void KiTerminalPutChar(char c);
 void KiTerminalClearScreen();
-
+char* KiTerminalGets(int size);
 #endif

@@ -5,7 +5,7 @@
 .set CHECKSUM, -(MAGIC + FLAGS) 
 
 
-.section .multiboot
+.section .multiboot_header
 .align 4
 .long MAGIC
 .long FLAGS
@@ -15,7 +15,7 @@
 .section .bss
 .align 16
 stack_bottom:
-.skip 16384 
+.skip 65536 
 stack_top:
 
 .section .data 

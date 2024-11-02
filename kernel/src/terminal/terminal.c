@@ -109,7 +109,7 @@ static inline char* ArrayAdder(size_t size) {
 }
 
 char* KiTerminalGets(size_t size){
-    KiTerminalPuts("\n> ");
+    KiTerminalPuts("\n-> ");
     char* result = ArrayAdder(size);
     if(result == NULL) return "ERROR! MEMORY ALLOCATION FAILURE";
     KiTerminalPuts("\n");

@@ -6,7 +6,7 @@
 
 #include "../superheader.h"
 
-#define MEMORY_SIZE 10960  
+#define MEMORY_SIZE 40960  
 
 typedef struct Block {
     size_t size;       

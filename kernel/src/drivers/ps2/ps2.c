@@ -1,7 +1,7 @@
 #include "ps2.h"
 
 
-static inline char Ps2ScanCodeToCharacter(uint8_t makeCode) {
+char Ps2ScanCodeToCharacter(uint8_t makeCode) {
     switch (makeCode) {
         case 41: return '`';
         case 2: return '1';
@@ -62,7 +62,7 @@ static inline char Ps2ScanCodeToCharacter(uint8_t makeCode) {
 
 
 
-uint8_t Ps2ReadKeyFromPort(){
+uint8_t Ps2ReadScanCodeFromPort(){
     while(1){
         uint8_t status = KiInByte(0x64);
         if(status & 0x01){
@@ -73,6 +73,6 @@ uint8_t Ps2ReadKeyFromPort(){
 
 
 char Ps2ReadKey() {
-    uint8_t scan_code = Ps2ReadKeyFromPort(); 
+    uint8_t scan_code = Ps2ReadScanCodeFromPort(); 
     return Ps2ScanCodeToCharacter(scan_code);
 }

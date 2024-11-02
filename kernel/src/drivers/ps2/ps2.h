@@ -7,6 +7,6 @@
 #include "../driver.h"
 
 char Ps2ReadKey();
-
-
+uint8_t Ps2ReadScanCodeFromPort();
+char Ps2ScanCodeToCharacter(uint8_t makeCode);
 #endif

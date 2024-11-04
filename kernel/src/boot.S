@@ -20,7 +20,7 @@ stack_top:
 
 .section .data 
 loadmessage:
-    .asciz "Loading Kernel....\n\n"
+    .asciz "Loading AstaraOS Kernel....\n\n"
 .section .text
 .global _KiLoader
 

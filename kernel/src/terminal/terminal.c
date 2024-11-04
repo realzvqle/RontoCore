@@ -73,11 +73,20 @@ static inline char* ArrayAdder(size_t size) {
             if(caps == false) character = Ps2ScanCodeToCharacter(scan_code);
             else{
                 if(scan_code == 28){
+                    caps = false;
                     character = Ps2ScanCodeToCharacter(scan_code);
-                }
-                else{
+                }    
+                else if(scan_code < 50){
                     char haracter = Ps2ScanCodeToCharacter(scan_code);
                     character = haracter - 32;
+                }
+                switch(scan_code){
+                    case 57:
+                        character = ' ';
+                        break;
+                    case 28:
+                        character = '\n';
+                        break;
                 }
                 
             }
@@ -114,4 +123,12 @@ char* KiTerminalGets(size_t size){
     if(result == NULL) return "ERROR! MEMORY ALLOCATION FAILURE";
     KiTerminalPuts("\n");
     return result;
+}
+
+void KiTerminalTurnOffCursor() {
+    KiOutByte(0x3D4, 0x0A); 
+    KiOutByte(0x3D5, 0x20);
+
+    KiOutByte(0x3D4, 0x0B);
+    KiOutByte(0x3D5, 0x3F); 
 }

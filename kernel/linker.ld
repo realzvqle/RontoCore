@@ -4,11 +4,11 @@ ENTRY(_KiLoader)
 SECTIONS
 {
     . = 0x100000;
-    .text {
+    .text : {
         *(.multiboot_header)  
         *(.text)        
     }
-    .bss {
+    .bss : {
         *(.bss) 
     }
 }

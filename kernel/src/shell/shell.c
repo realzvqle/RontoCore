@@ -62,7 +62,10 @@ static inline void InterpretCommands(char* command, char* arguments){
 
 void KiKernelShellInit(){
     KiTerminalClearScreen();
-    KiTerminalPuts("Welcome to RontoCore Operating System\nType Help for a list of commands!\n\n");
+    KiTerminalPuts("Welcome to RontoCore Operating System\nType Help for a list of commands!\n");
+    KiTerminalPuts("System Was Compiled On ");
+    KiTerminalPuts(__TIMESTAMP__);
+    KiTerminalPuts("\n\n");
     while(1){   
         char first[512];
         char second[512];

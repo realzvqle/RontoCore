@@ -17,7 +17,7 @@ resb 65536
 stack_top:
 
 section .data
-loadmessage db "Loading AstaraOS Kernel....", 10, 10, 0
+loadmessage db "Loading RontoCores Kernel....", 10, 10, 0
 
 section .text
 global _KiLoader

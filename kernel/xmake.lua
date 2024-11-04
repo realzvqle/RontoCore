@@ -25,7 +25,8 @@ toolchain("clang_nasm")
     set_toolset("as", "nasm")  
     add_cxxflags("-m32", "-target i686-elf")
     add_cflags("-m32", "-target i686-elf")
-
     add_asflags("-f elf32")     
-
 toolchain_end()
+
+
+
